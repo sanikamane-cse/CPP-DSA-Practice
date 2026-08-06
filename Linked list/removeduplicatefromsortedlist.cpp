@@ -11,7 +11,7 @@ public:
     {
         data = value;
         next = NULL;
-    }
+    } 
 };
 
 int main()
