@@ -3,21 +3,20 @@ using namespace std;
 class Node{
     public:
     int data;
-    Node *next;
+    Node* next;
 
 };
-
 int main(){
-    Node* head=new Node();
-
-    head->data=10;
-    head->next=NULL;
-
-    cout<<"Data="<<head->data<<endl;
-    cout<<"Next="<<head->next<<endl;
-
-    delete head;
-
-    return 0;
+Node* first=new Node();
+first->data=10;
+first->next=NULL;
+cout<<"Node 10 conncted successfully"<<endl;
+cout<<first->data;
+delete first;
+return 0;
 
 }
+
+
+
+
