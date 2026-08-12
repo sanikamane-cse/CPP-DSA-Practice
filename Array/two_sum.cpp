@@ -3,25 +3,24 @@
 #include<unordered_map>
 using namespace std;
 
-int main()
-{
-    vector<int> nums = {2, 11,7, 15};
-    int target = 9;
+int main(){
 
-    unordered_map<int, int> mp;
+    vector<int> nums={2,7,11,15};
 
-    for(int i = 0; i < nums.size(); i++)
-    {
-        int complement = target - nums[i];
+    int target=9;
 
-        if(mp.find(complement) != mp.end())
-        {
-            cout << mp[complement] << " " << i;
+    unordered_map<int,int>mp;
+
+    for(int i=0;i<nums.size();i++){
+
+        int need=target-nums[i];
+
+        if(mp.find(need)!=mp.end()){
+
+            cout<<mp[need]<<" "<<i;
             return 0;
         }
-
-        mp[nums[i]] = i;
+        mp[nums[i]]=i;
     }
-
     return 0;
 }
