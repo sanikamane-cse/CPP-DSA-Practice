@@ -7,9 +7,9 @@ public:
     int data;
     Node* next;
 
-    Node(int value)
+    Node(int val)
     {
-        data = value;
+        data = val;
         next = NULL;
     }
 };
@@ -17,46 +17,47 @@ public:
 int main()
 {
     Node* head = new Node(1);
+    Node* second = new Node(2);
+    Node* third = new Node(6);
+    Node* fourth = new Node(4);
+    Node* fifth = new Node(6);
+    Node* sixth = new Node(5);
 
-    head->next = new Node(2);
-    head->next->next = new Node(6);
-    head->next->next->next = new Node(3);
-    head->next->next->next->next = new Node(4);
-    head->next->next->next->next->next = new Node(6);
-
+    head->next = second;
+    second->next = third;
+    third->next = fourth;
+    fourth->next = fifth;
+    fifth->next = sixth;
 
     int val = 6;
 
+    Node dummy(0);
+    dummy.next = head;
 
-    while(head != NULL && head->data == val)
+    Node* previous = &dummy;
+    Node* current = head;
+
+    while(current != NULL)
     {
-        head = head->next;
-    }
-
-
-    Node* temp = head;
-
-    while(temp != NULL && temp->next != NULL)
-    {
-        if(temp->next->data == val)
+        if(current->data == val)
         {
-            temp->next = temp->next->next;
+            previous->next = current->next;
+            current = current->next;
         }
         else
         {
-            temp = temp->next;
+            previous = current;
+            current = current->next;
         }
     }
 
-
-    temp = head;
+    Node* temp = dummy.next;
 
     while(temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
     }
-
 
     return 0;
 }
