@@ -23,10 +23,10 @@ int main(){
 
    Node* temp=head;
    while(temp!=NULL){
-   cout<<temp->data<<" ";
-   temp=temp->next;
    count++;
+   temp=temp->next;
    }
+   cout<<"Number of nodes:"<<count;
    return 0;
 
 }
