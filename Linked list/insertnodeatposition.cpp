@@ -4,42 +4,37 @@ class Node{
     public:
     int data;
     Node* next;
+    Node(int val){
+        data=val;
+        next=NULL;
+    }
 };
 int main(){
-    Node* first=new Node();
-    Node* second=new Node();
-    Node* third=new Node();
+    Node* head=new Node(10);
+    Node* second=new Node(20);
+    Node* third=new Node(30);
 
-    first->data=10;
-    second->data=20;
-    third->data=30;
-
-    first->next=second;
+    head->next=second;
     second->next=third;
-    third->next=NULL;
 
-    int position=2;
-
-    Node* newNode=new Node();
-    newNode->data=25;
-
-    Node* temp=first;
-
-    for(int i=1;i<position-1;i++){
-         temp=temp->next;
+    int pos=3;
+    
+    Node* newNode=new Node(25);
+  
+    Node* temp=head;
+    for(int i=1;i<pos-1;i++){
+        temp=temp->next;
     }
+    newNode->next=temp->next;
+    temp->next=newNode;
 
-     newNode->next = temp->next;
+    temp=head;
 
-    temp->next = newNode;
-
-    temp=first;
-
-    while(temp !=NULL){
+    while(temp!=NULL){
         cout<<temp->data<<" ";
         temp=temp->next;
     }
     return 0;
 
-
+    
 }

@@ -4,36 +4,33 @@ class Node{
     public:
     int data;
     Node* next;
+
+    Node(int val){
+        data=val;
+        next=NULL;
+    }
 };
 int main(){
-Node* head=new Node();
-Node* second=new Node();
+    Node* head=new Node(10);
+    Node* second=new Node(20);
 
-head->data=10;
-head->next=second;
+    head->next=second;
 
-second->data=20;
-second->next=NULL;
+    Node* newNode=new Node(30);
 
-Node* newNode=new Node();
-newNode->data=30;
-newNode->next=NULL;
+    Node* temp=head;
 
-Node* temp=head;
-while(temp->next != NULL){
-    temp=temp->next;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=newNode;
 
-}
-temp->next=newNode;
+    temp=head;
 
-temp=head;
-
-while(temp!=NULL){
-    cout<<temp->data<<" ";
-    temp=temp->next;
-
-}
-return 0;
-
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    return 0;
 
 }
