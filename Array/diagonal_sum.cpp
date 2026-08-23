@@ -20,6 +20,6 @@ int main(){
     sum=sum-arr[1][1];
 
     cout<<"Diagonal Sum="<<sum;
-    
+
     return 0;
 }
