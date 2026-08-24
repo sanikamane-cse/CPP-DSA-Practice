@@ -10,16 +10,21 @@ int main(){
     int count=0;
 
     for(int i=0;i<n;i++){
+
         if(count==0){
             element =arr[i];
         }
+
         if(arr[i]=element){
             count++;
-        }else{
+        }
+
+        else{
             count--;
         }
 
     }
+    
     cout<<"Majority element:"<<element;
     return 0;
 }
