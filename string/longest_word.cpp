@@ -7,12 +7,11 @@ int main() {
     string s = "I love programming very much";
 
     string word = "";
-    string longest = " ";
+    string longest = "";
 
-    for (int i = 0; i <= s.length(); i++) {
+    for (int i = 0; i < s.length(); i++) {
 
-        if (s[i] != ' ' && s[i] != '\0') {
-            
+        if (s[i] != ' ') {
             word += s[i];
         }
         else {
@@ -22,6 +21,11 @@ int main() {
 
             word = "";
         }
+    }
+
+    
+    if (word.length() > longest.length()) {
+        longest = word;
     }
 
     cout << "Longest word: " << longest << endl;
