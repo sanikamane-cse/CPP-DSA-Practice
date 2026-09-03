@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+
 using namespace std;
 
 void count(string s, int &vowelCount, int &consonantCount) {
